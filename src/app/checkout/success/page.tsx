@@ -1,8 +1,17 @@
 'use client'
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-10">загрузка...</div>}>
+      <CheckoutSuccessContent />
+    </Suspense>
+  );
+}
+
+function CheckoutSuccessContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('orderId');
 
