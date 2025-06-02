@@ -108,6 +108,7 @@ export const useProduct = (id: string) => {
   });
 };
 
+
 export const useCategories = () => {
   return useQuery({
     queryKey: ['categories'],
